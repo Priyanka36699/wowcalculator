@@ -1,0 +1,119 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="bootstrap.css">
+      <script>
+         //function that display value
+         function dis(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         //function that evaluates the digit and return result
+         function solve()
+         {
+             let x = document.getElementById("result").value
+             let y = eval(x)
+             document.getElementById("result").value = y
+         }
+           
+         //function that clear the display
+         function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+         function bs(){
+            var number=document.getElementById("result").value;
+            var len=number.length-1;
+            var newnumber=number.substring(0,len);
+            document.getElementById("result").value=newnumber; 
+         }
+      </script>
+      <!-- for styling -->
+      <style>
+         .title{
+         margin-bottom: 10px;
+         text-align:center;
+         width: 275px;
+         color:black;
+         border: solid black 2px;
+         background-color:white ;
+
+
+         }
+  
+         input[type="button"]
+         {
+            border-radius: 12px;
+         background-color:lightgrey;
+         //color:white;
+         width:100%;
+         margin:0;
+         }
+         input[type="text"]
+         {
+         background-color:black;
+         color: white;
+         text-align-last:right;
+         border: solid black 2px;
+         width:100%
+         }
+         #a{
+            height: 100%;
+         }
+         #b{
+           background-image:url( https://image.shutterstock.com/image-illustration/abstract-background-camera-flies-past-260nw-733632979.jpg); 
+           background-repeat:no-repeat ;
+           background-size:cover;
+         }
+         #t{
+            border-collapse: separate;
+            border-spacing: 15px;
+         }
+      </style>
+   </head>
+   <!-- create table -->
+   <body id="b"><br><br><br><br><br><center>
+      <div class = title ><marquee><b><i>Priya's Calculator</i></b></marquee></div>
+      <table border="1" id="t">
+         <tr>
+            <td colspan="3"><input type="text" id="result" style="padding:5px ; border-color:black; " /></td>
+
+            <td><input type="button" value=" c " style="background-color:darkred;color: white; " onclick="bs()"/></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="+" onclick="dis('+')"/> </td>
+            <td><input type="button" value="-" onclick="dis('-')"/> </td>
+             <td><input type="button" value="*" onclick="dis('*')"/> </td>
+             <td><input type="button" value="/" onclick="dis('/')"/> </td>
+         </tr>
+         <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="9" onclick="dis('9')"/> </td>
+            <td><input type="button" value="8" onclick="dis('8')"/> </td>
+            <td><input type="button" value="7" onclick="dis('7')"/> </td>
+            <td rowspan="4" id="a"><input type="button"  value="="style="height: 100%; background-color: mediumblue; padding: 75px 10px;"  onclick="solve()"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="6" onclick="dis('6')"/> </td>
+            <td><input type="button" value="5" onclick="dis('5')"/> </td>
+            <td><input type="button" value="4" onclick="dis('4')"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="3" onclick="dis('3')"/> </td>
+            <td><input type="button" value="2" onclick="dis('2')"/> </td>
+            <td><input type="button" value="1" onclick="dis('1')"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value=" 0  " onclick="dis('0')"/> </td>
+            <td><input type="button" value="   .  " onclick="dis('.')"/> </td>
+            <!-- clr() function will call clr to clear all value -->
+
+            <td><input type="button" value="AC" style="background-color:red;"onclick="clr()"/> </td>
+
+            <!-- solve function call function solve to evaluate value -->
+         </tr>
+      </table>
+      </center>
+   </body>
+</html>   
